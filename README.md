@@ -4,7 +4,8 @@
 - Task managment
 - Alert System
 - Motivation
-- Verbal and non Verbal Cues
+- Verbal and non-Verbal Cues Emotion Detection
+- Chatbot
 ### Well-Being 
 Moti-PuP uses an emotion detection A.I model to retain emotions from a users camera. If any negative emotions are detected motiv-pet will help you manage the best way it knows how, whether that be promting you to take a break and play a quick game of frisbee, or walking you through well being exercises. 
 ### Tech Stack
