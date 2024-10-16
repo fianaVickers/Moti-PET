@@ -1,4 +1,4 @@
-# Moti-PUP
+# Moti-PuP
 ## Virtual assistant that promotes productivity and healthy mental health aimed to assist individuals who sit a computers all day to get the most out of their day - all wrapped in a cute companion. You are never truly alone with Moti-PuP!
 ### Features
 - Task managment
