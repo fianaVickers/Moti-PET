@@ -8,8 +8,22 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - needs_help
+  - detect_emotion
+
+
+slots:
+  emotion:
+    type: text
+    mappings: 
+      - type: custom
 
 responses:
+
+  utter_help: 
+  - text: "im sorry to here that"
+  - text: "What do you need right now?"
+
   utter_greet:
   - text: "Hey! How are you?"
 
@@ -28,6 +42,13 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_happy_detected:
+  - text: "i am glad i made you happy :)"
+
+actions:
+  - action_detect_emotion
+
 
 session_config:
   session_expiration_time: 60

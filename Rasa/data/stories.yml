@@ -2,6 +2,11 @@ version: "3.1"
 
 stories:
 
+- story: provide help  
+  steps:
+  - intent: needs_help
+  - action: utter_help
+
 - story: happy path
   steps:
   - intent: greet
@@ -28,3 +33,13 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: Detect and respond to user emotion
+  steps:
+  - intent: detect_emotion
+  - action: action_detect_emotion
+  - slot_was_set:
+     - emotion: "happy"
+  - action: utter_happy_detected
+
+
