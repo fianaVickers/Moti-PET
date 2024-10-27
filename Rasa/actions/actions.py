@@ -42,7 +42,7 @@ class ActionDetectEmotion(Action):
         # Hugging Face API details
         api_url = "https://api-inference.huggingface.co/models/j-hartmann/emotion-english-distilroberta-base"
         headers = {
-            "Authorization": f"Bearer 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"
+            "Authorization": f"Bearer "
         }
 
         # Send the user message to Hugging Face for emotion detection

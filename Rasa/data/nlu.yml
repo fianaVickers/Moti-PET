@@ -4,11 +4,22 @@ nlu:
 
 - intent: detect_emotion
   examples: |
-    - I feel happy today
-    - I'm really sad
-    - I am so angry
-    - I'm feeling down
-    - I am over the moon
+    - I need to get some things off my chest 
+    - I need to talk to someone 
+    - something does not feel right 
+    - i am not feeling good 
+    - i need to talk 
+    - no one understands me 
+    - I am having a tough day 
+    - tough time
+    - i am frusterated 
+    - i am sad
+    - I am down 
+    - I need help
+    - I really need help 
+    - can you help me 
+    - please, I need someone
+    - help me 
 
 - intent: play_music 
   examples: | 
@@ -66,11 +77,9 @@ nlu:
 
 - intent: journal
   examples: | 
-    - I need to get some things off my chest 
-    - I need to talk to someone 
-    - I have a lot to say 
     - I want to journal 
     - start journaling 
+    - I have a lot to say 
     - start journal session 
     - start journaling session  
     
@@ -134,13 +143,6 @@ nlu:
     - I want to practice deep breathing  
     - lets do a deep breathing exercise
     - I want to do a deep breathing exercise      
-
-- intent: needs_help 
-  examples: | 
-    - I need help
-    - I really need help 
-    - can you help me 
-    - please, I need someone
 
 - intent: greet
   examples: |

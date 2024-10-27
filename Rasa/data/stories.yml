@@ -161,11 +161,6 @@ stories:
   - action: utter_journaling_stepFour
   - action: utter_journaling_stepFive
 
-- story: provide help  
-  steps:
-  - intent: needs_help
-  - action: utter_help
-
 - story: happy path
   steps:
   - intent: greet
@@ -196,6 +191,7 @@ stories:
 - story: Detect and respond to user emotion
   steps:
   - intent: detect_emotion
+  - action: utter_want_to_talk
   - action: action_detect_emotion
   - slot_was_set:
      - emotion: "happy"

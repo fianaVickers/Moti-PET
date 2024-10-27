@@ -114,6 +114,11 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  utter_want_to_talk:
+  - text: "I am all ears, Woof! Tell me what's going on? and I can try to help you the best way I can"
+  - text: "You have my full attention, whats up? I can try to help you the best way I can"
+  - text: "Lets talk about it, tell me whatever you feel comfortable with. I can try to help you the best way I can"
+
   utter_grattitude_response: 
   - text: "I am so glad I could help! Woof"
   - text: "Of course always :)"
