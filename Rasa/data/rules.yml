@@ -11,3 +11,42 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Greet user at the start of the session
+  steps:
+    - action: action_session_start  # Triggered when the session starts
+    - action: utter_greet  
+
+- rule: respond with love 
+  steps: 
+    - intent: love
+    - action: utter_love
+
+- rule: respond to mental health question
+  steps:
+  - intent: mental_health_improvement
+  - action: utter_mental_health_improv
+  - action: utter_example_questions     
+
+- rule: what is the bot function response
+  steps:
+  - intent: bot_function
+  - action: utter_bot_function
+  - action: utter_example_questions
+
+- rule: response to wyd
+  steps: 
+  - intent: wyd
+  - action: utter_wyd
+
+- rule: respond to who are you
+  steps:
+  - intent: who_are_you
+  - action: utter_Iam_motivpup 
+  - action: utter_bot_function
+  - action: utter_example_questions
+
+
+
+  
+

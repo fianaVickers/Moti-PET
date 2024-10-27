@@ -10,7 +10,30 @@ intents:
   - bot_challenge
   - needs_help
   - detect_emotion
-
+  - pmr_demo
+  - mental_health_improvement
+  - play_music
+  - love
+  - who_are_you
+  - fun_fact
+  - bot_function
+  - need_positivity
+  - need_motivation
+  - wyd
+  - bodyscan_info
+  - bodyscan_exercise
+  - journal
+  - meditation
+  - meditate_info
+  - bodyscan_demo
+  - meditation_link
+  - pmr_exercise_info
+  - pmr_exercise_walkThrough
+  - breathing_exercise_info
+  - deep_breathing_demo
+  - gratiude
+  - deep_breathing_walkThrough
+  - done
 
 slots:
   emotion:
@@ -20,19 +43,67 @@ slots:
 
 responses:
 
+  utter_bot_function: 
+  - text: "Im here to make your day go smoother, from being someone to listen to providing positive affirmations and mental health exercises to relieve stress ;) Woof!"
+
+  utter_love: 
+  - text: "I love you more friend! Bark Bark"
+  - text: "I love you too <3"
+  - text: "Im so happy to hear that Woof! you made my day, hopefully I can make yours!"
+  - text: "But I think I love you even more Woof!"
+  - text: "you really mean it? *puppy eyes*"
+  - text: "I love you the most! Woof!"
+
+  utter_mental_health_improv: 
+  - text: "I'm motiv-PuP I am here to help your mental health improve via my journaling function, progressive muscle relaxation, body scan, deep breathing, and meditation exercises. I also have been trained how to motivate and tell you positive affirmations, and play calming music Woof!"
+  - text: "I am trained with pmr, body scan, meditation, and deep breathing exercises. Just ask me about them!"
+
+  utter_example_questions: 
+  - text: "Just ask me to, play calming music or walk you through a meditation exercise"
+  - text: "Im easy to talk to, ask me to show you a body scan tutorial"
+  - text: "Try asking me to, motivate you, or give you positivity"
+
+  utter_Iam_motivpup: 
+  - text: "I am your virtual pet, Motiv-pUp"
+  - text: "Its me Motiv-pUp!"
+
+  utter_wyd: 
+  - text: "Currently digging up positvity Woof!"
+  - text: "Getting trained to make you day better! :)"
+  - text: "Playing with my frisbe! Woof!"
+  - text: "Brb I got the Zoomies!"
+  - text: "Eating alphabet soup :)"
+  - text: "Thinking about how you have come so far!"
+  - text: "thinking about how grateful I am that you chose to spend time with me today Woof!"
+  - text: "thinking about how much fun were going to have today! Woof!"
+
   utter_help: 
   - text: "im sorry to here that"
   - text: "What do you need right now?"
 
   utter_greet:
   - text: "Hey! How are you?"
+  - text: "Whats going on!"
+  - text: "Yo! Lets get this day started off on a positive note"
+  - text: "Hi, you look great today by the way ;)"
+  - text: "Hello how can I help you today?"
+  - text: "Hi!, its been a while, hopefully I am able to help you :)"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
+  utter_fun_fact: 
+  - text: "Octopuses have three hearts. Two hearts pump blood to the gills, while the third pumps it to the rest of the body."  
+  - text: "Humans share about 60% of their DNA with bananas. Although we look very different, some genetic sequences are common across many living organisms." 
+  - text: "Butterflies taste with their feet. Their taste sensors are located in their feet, which allows them to identify food sources when they land." 
+  - text: "Cleopatra lived closer to the invention of the iPhone than to the construction of the Great Pyramid. The pyramids were built around 2560 BCE, while Cleopatra lived around 30 BCE." 
+
   utter_did_that_help:
   - text: "Did that help you?"
+
+  utter_next_step_exercise:
+  - text: "You are doing amazing so far! Lets keep going, are you ready to continue?"
 
   utter_happy:
   - text: "Great, carry on!"
@@ -43,8 +114,231 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
+  utter_grattitude_response: 
+  - text: "I am so glad I could help! Woof"
+  - text: "Of course always :)"
+  - text: "Im just happy to be of help! Woof Woof"
+  - text: "Of course anytime! Bark!"
+  - text: "I am just glad that I could help you!"
+  - text: "Yw! Bark Bark"
+  - text: "Of course, what else can I help you with? Woof!"
+
   utter_happy_detected:
   - text: "i am glad i made you happy :)"
+
+  utter_positive_affirm:
+  - text: "You are worthy of love and respect."
+  - text: "You are capable of achieving your goals."
+  - text: "You are in control of your thoughts and emotions."
+  - text: "You have the power to create the life you desire."
+  - text: "You are resilient, strong, and brave."
+  - text: "You are proud of how far you have come and excited about where you am going."
+  - text: "You are surrounded by love and support."
+  - text: "You radiate positivity and attract good things."
+  - text: "Every challenge is an opportunity to grow and learn."
+  - text: "You let go of negativity and invite peace into your life."
+
+
+  utter_motivation: 
+  - text: "Believe you can, and you are halfway there. —Theodore Roosevelt"
+  - text: "Dream big. Start small. Act now."
+  - text: "Your only limit is your mind."
+  - text: "Doubt kills more dreams than failure ever will."
+  - text: "The harder you work for something, the greater you will feel when you achieve it."
+  - text: "Do not watch the clock; do what it does. Keep going."
+  - text: "Great things never come from comfort zones."
+  - text: "Success does not come from what you do occasionally. It comes from what you do consistently."
+  - text: "Push yourself, because no one else is going to do it for you."
+
+  utter_PMR_stepOne:
+  - text: "Lets do a pmr exercise together! Find a quiet place where you will not be disturbed. Sit or lie down in a comfortable position, with your hands resting at your sides and your feet uncrossed"
+   
+  utter_PMR_stepTwo:
+  - text: "Close your eyes and take a few deep breaths to start. Inhale deeply through your nose and exhale slowly through your mouth"
+
+  utter_PMR_stepThree:
+  - text: " Begin by focusing on your feet. Curl your toes downward as if trying to grip the ground. Hold this tension for about 5-10 seconds. After holding, release the tension all at once and focus on the feeling of relaxation in your feet. Let the muscles loosen completely for about 15-20 seconds"
+
+  utter_PMR_stepFour:
+  - text: "Flex your calf muscles by pointing your toes upward (towards your knees). Hold the tension for 5-10 seconds. Relax your calves, noticing the difference between tension and relaxation"
+
+  utter_PMR_stepFive:
+  - text: " Squeeze your thigh muscles tightly, as though trying to pull your legs together. Hold for 5-10 seconds. Let the muscles in your thighs relax fully"
+
+  utter_PMR_stepSix:
+  - text: "Tighten your stomach muscles as though bracing for a punch. Hold for 5-10 seconds. Relax and feel the tension drain away from your midsection"
+
+  utter_PMR_stepSeven:
+  - text: "Take a deep breath and hold it while you tighten your chest muscles. Hold for 5-10 seconds. Exhale slowly and let your chest relax"
+
+  utter_PMR_stepEight:
+  - text: "Make a fist with each hand and squeeze tightly. Hold for 5-10 seconds. Open your hands and let the muscles relax. Bend your elbows and tense your biceps by pretending you are trying to lift something heavy. Hold for 5-10 seconds. Let your arms fully relax"
+
+  utter_PMR_stepNine:
+  - text: "Shrug your shoulders up towards your ears. Hold for 5-10 seconds. Drop your shoulders and feel them loosen."
+
+  utter_PMR_stepTen:
+  - text: "Press your head back slightly, as if trying to touch the back of your neck to a chair. Hold for 5-10 seconds. Let your neck muscles relax."
+
+  utter_PMR_stepEleven:
+  - text: " Scrunch up your face, squeezing your eyes shut and tightening your jaw. Hold for 5-10 seconds.  Let your face go soft, and relax your jaw, eyelids, and forehead."
+
+  utter_PMR_information:
+  - text: "When referring to muscle relaxation, PMR stands for Progressive Muscle Relaxation. It is a technique used to reduce muscle tension and promote relaxation by progressively tensing and then relaxing different muscle groups in the body. This method helps individuals become more aware of physical sensations of tension and relaxation, and is often used to reduce stress, anxiety, and improve overall mental and physical well-being"
+
+  utter_PMR_link:
+  - text: "[PMR guide](https://www.youtube.com/watch?v=aF4H0oAiDSQ)"
+
+  utter_breathing_stepOne: 
+  - text: "Let me walk you through a deep breathing exercise. Sit in a chair with your feet flat on the ground, or lie down in a comfortable position. Place one hand on your chest and the other on your abdomen."
+  
+  utter_breathing_stepTwo: 
+  - text: "Close your eyes if you feel comfortable, and take a moment to release any tension in your shoulders, neck, or face. Let your body settle into the position and relax."
+
+  utter_breathing_stepThree: 
+  - text: "Breathe in slowly through your nose for a count of 4. Focus on breathing deeply into your abdomen (the hand on your abdomen should rise, while the hand on your chest should stay relatively still). Imagine filling your lungs completely with air, expanding your abdomen."
+
+  utter_breathing_stepFour: 
+  - text: "Hold the breath for a count of 4. This allows your body to fully absorb the oxygen."
+
+  utter_breathing_stepFive: 
+  - text: "Exhale slowly and fully through your mouth for a count of 6, as though you are blowing out a candle. Allow your abdomen to fall naturally as the air leaves your body, and feel the release of tension."
+
+  utter_breathing_stepSix: 
+  - text: "Repeat this process for 5-10 minutes, or longer if it feels good for you. Focus on each breath, letting go of any distractions, and fully engaging with the sensation of breathing."
+
+  utter_breathing_info: 
+  - text: "Deep breathing, also known as diaphragmatic breathing or abdominal breathing, is a technique that involves taking slow, deep breaths from the diaphragm, rather than shallow breaths from the chest. This type of breathing helps to fully oxygenate your lungs, slow your heart rate, and calm your nervous system. It is often used as a relaxation technique to reduce stress, anxiety, and tension."
+
+  utter_breathing_link: 
+  - text: "[Breathing guide](https://youtu.be/acUZdGd_3Dg?si=zqscAXEUjyL87mDt)"
+
+  utter_journaling_stepOne: 
+  - text: "I think it will be best to give yourself time to journal"
+
+  utter_journaling_stepTwo: 
+  - text: "Find a quiet and comfortable place where you will not be disturbed.Take a few deep breaths to center yourself."
+
+  utter_journaling_stepThree: 
+  - text: "Feel free to write about anything, jot down whatever comes to your mind. Tell me when your done."
+
+  utter_journaling_stepFour: 
+  - text: "Lets dive in a little deeper and focus your mind. Think about this specific prompt..."
+
+  utter_journaling_stepFive: 
+  - text: "Close your journal entry by summarizing any insights or realizations you have had during the session. You can ask yourself: What did I learn about myself today? What do I want to focus on moving forward? Lastly, take a few moments to breathe deeply, allowing yourself to feel calm and centered before returning to your day"
+
+  utter_journaling_neg_optionOne: 
+  - text: "Write about: What negative emotion are you experiencing right now? How does it feel in your body, and what triggered it?"
+
+  utter_journaling_neg_optionTwo: 
+  - text: "Write about: What are the negative thoughts accompanying this emotion? Are they based on facts or assumptions? How might they be exaggerated or distorted?"
+
+  utter_journaling_neg_optionThree: 
+  - text: "Write about: What would you tell a close friend who is feeling the way you do right now? How can you reframe your thoughts to be kinder to yourself?"
+
+  utter_journaling_neg_optionFour: 
+  - text: "Write about: What aspects of this situation are within your control? What can you do right now to either improve or accept the situation?"
+
+  utter_journaling_neg_optionFive: 
+  - text: "Write about: Even though things are tough, what are three small things you can be grateful for right now?"
+
+  utter_journaling_pos_optionOne: 
+  - text: "Write about: What is something you did today or recently that makes you proud of yourself? Give yourself a compliment for it."
+
+  utter_journaling_pos_optionTwo: 
+  - text: "Write about: What positive emotion are you experiencing right now? How does it feel physically and emotionally?"
+
+  utter_journaling_pos_optionThree: 
+  - text: "Write about: What is one positive moment you experienced recently that you wish could last longer? How can you savor it now in your memory?"
+
+  utter_journaling_pos_optionFour: 
+  - text: "Write about: What is something you are looking forward to? Why does it make you feel excited or happy?"
+
+  utter_journaling_pos_optionFive: 
+  - text: "Write about: Who in your life helped contribute to this positive emotion? How can you show appreciation to them?"
+
+  utter_journaling_finished: 
+  - text: "You are a great writer!, hopefully this helped"
+  - text: "It takes a lot of open up, so proud of you!"
+  - text: "I will value all of these memories."
+  - text: "I hope you feel so much better"
+  - text: "Now that we finsihed journaling, onto the next task!"
+
+  utter_meditation_stepOne: 
+  - text: "Choose a quiet place where you can sit or lie down comfortably without being disturbed. You can sit cross-legged on the floor, in a chair with your feet flat on the ground, or lie down if that is more comfortable for you. Place your hands gently in your lap or on your knees, palms facing upward or downward. Close your eyes to block out distractions and bring your attention inward."
+
+  utter_meditation_stepTwo: 
+  - text: "Begin by taking a few deep breaths. Inhale deeply through your nose, filling your lungs completely. Hold for a moment, and then exhale slowly and fully through your mouth. With each exhale, feel your body begin to relax. Release any tension in your shoulders, neck, and jaw. Allow your body to sink into a natural and comfortable posture."
+
+  utter_meditation_stepThree: 
+  - text: "Now, bring your full attention to your breath. Breathe naturally, in and out through your nose. Notice the sensation of the air as it enters your nostrils, fills your lungs, and then leaves your body. Pay attention to how your chest and abdomen gently rise and fall with each breath. If your mind starts to wander (which is completely normal), gently bring your focus back to your breath without judgment."
+
+  utter_meditation_stepFour: 
+  - text: "As you continue to focus on your breath, notice if any thoughts arise. Instead of engaging with the thoughts, simply observe them. Imagine your thoughts as clouds passing in the sky—acknowledge them and let them drift away, returning your attention to your breath each time. You do not need to force your mind to be completely empty. Just notice the thoughts and let them go without attachment."
+
+  utter_meditation_stepFive: 
+  - text: "Allow yourself to simply be in the present moment. Feel the stillness around you, the calmness in your body, and the rhythm of your breathing. You can silently repeat a simple phrase or affirmation, such as I am calm and at peace or I am here, in this moment with each inhale and exhale. Feel yourself grounded in the present, without worrying about the past or the future. Just experience being fully alive and aware right now."
+
+  utter_meditation_stepSix: 
+  - text: "When you feel ready to end your meditation, take a few deeper breaths. Gently bring your awareness back to the room around you. Notice the sounds, sensations, and the feeling of your body touching the ground or chair. Slowly begin to move your fingers and toes, stretch your arms, and open your eyes when you're ready."
+
+  utter_meditation_stepSeven: 
+  - text: "Before getting up, take a moment to notice how you feel after the meditation. You may feel more relaxed, centered, or clear-headed. Acknowledge any positive changes, no matter how small, and carry this sense of calm into your day."
+
+  utter_meditation_info: 
+  - text: "Meditation is a mental practice that involves focusing the mind and eliminating distractions to achieve a state of clarity, calmness, and heightened awareness. It’s often used to cultivate mindfulness, improve emotional regulation, reduce stress, and enhance overall well-being. Meditation can be practiced in many forms, but its core goal is to train the mind to focus, relax, and develop greater self-awareness."
+
+  utter_meditation_link: 
+  - text: "[Meditation guide](https://youtu.be/ZToicYcHIOU?si=4wcMRZ9Du-UMZG90)"
+
+  utter_bodyscan_stepOne: 
+  - text: "Starting from the top of your head, slowly bring your awareness to different parts of your body."
+
+  utter_bodyscan_stepTwo: 
+  - text: "Begin with your head and face, Relax your forehead, your eyes, your jaw."
+
+  utter_bodyscan_stepThree: 
+  - text: "Move down to your neck and shoulders, letting any tension melt away."
+
+  utter_bodyscan_stepFour: 
+  - text: "Continue to your chest, back, arms, hands, abdomen, hips, legs, and feet."
+
+  utter_bodyscan_stepFive: 
+  - text: "As you scan each body part, notice any tension or sensations, and release any tightness as you breathe out."
+
+  utter_bodyscan_tips: 
+  - text: "A body scan is a mindfulness meditation technique that involves paying attention to physical sensations in the body, moving your awareness slowly from head to toe (or vice versa). The goal is to become more aware of your body and the sensations you're experiencing in the present moment without judgment. It helps you to notice tension, discomfort, or relaxation in different areas and encourages letting go of stress."
+
+  utter_bodyscan_help_link: 
+  - text: "[Bodyscan information](https://youtu.be/Zyeq-4tvmqE?si=muYyOVdWskawBzEz)"
+
+  utter_exercise_info: 
+  - text: "If anything is unclear, maybe this video might help!"
+
+  utter_exercise_demo: 
+  - text: "I dug up this video from youtube woof! maybe this might help!"
+
+  utter_play_music_stepOne: 
+  - text: "Try Listening to this song I found! Hopefully this will relax you ;)"
+
+  utter_play_music_stepTwo: 
+  - text: "Try Listening to this song I found!"
+
+  utter_do_u_need_a_video_excersie: 
+  - text: "Was this walk through helpful, or do you need a video to help guide you? Say yes if so!, or thank you to stop the exercise :)"
+
+  utter_exercise_finished: 
+  - text: "You finished the exercise! Hopefully I helped you relax :)"
+
+  utter_play_music_link: 
+  - text: "[Calm music](https://www.youtube.com/live/UOJ4V3DAAx8?si=QnYK48Y1Cjv1Mdd2)"
+  - text: "[Calm music](https://youtu.be/xDih5SwFs_c?si=Ywa1enrqAnUTiiiz)"
+  - text: "[Calm music](https://www.youtube.com/watch?v=G-YdqCMz_Ys)"
+  - text: "[Calm music](https://www.youtube.com/watch?v=VDuFYROXQfg)"
+
+  utter_default:
+  - text: "I'm sorry, I haven't been trained to respond to that yet. ;( Can you please rephrase?"
 
 actions:
   - action_detect_emotion

@@ -10,6 +10,131 @@ nlu:
     - I'm feeling down
     - I am over the moon
 
+- intent: play_music 
+  examples: | 
+    - play me a song 
+    - I want to hear a song 
+    - play calming music 
+    - play youtube 
+    
+- intent: fun_fact
+  examples: |    
+    - I am bored 
+    - tell me something cool 
+    - tell me something interesting
+    - nuetral 
+    - this is lame 
+    - whats a cool fact 
+    - what is something cool 
+    - teach me something 
+
+- intent: need_positivity
+  examples: | 
+    - i need positivity
+    - I want to hear something positive 
+    - tell me a positive 
+    - positive affirmation 
+    - tell me a positive thought  
+    
+- intent: need_motivation 
+  examples: | 
+    - I really need motivation right now 
+    - motivate me
+    - motivate me please 
+    - tell me something to lift my spririts 
+    - I need motivation  
+
+- intent: bodyscan_info
+  examples: | 
+    - what is body scan 
+    - what is body scanning 
+    - tell me about body scanning 
+
+- intent: bodyscan_demo
+  examples: |
+    - show me a body scan 
+    - show me a video on scan 
+    - show me a demo on body scan 
+    - i need to see a body scan demo     
+
+- intent: bodyscan_exercise 
+  examples: | 
+    - walk me though a body scan exercise 
+    - I want to practice body scanning 
+    - lets do a body scan exercise
+    - I want to do a body scan exercise 
+
+- intent: journal
+  examples: | 
+    - I need to get some things off my chest 
+    - I need to talk to someone 
+    - I have a lot to say 
+    - I want to journal 
+    - start journaling 
+    - start journal session 
+    - start journaling session  
+    
+- intent: meditation
+  examples: |
+    - I need to clear my mind
+    - help me clear my mind 
+    - walk me though a meditation exercise 
+    - I want to practice meditation 
+    - lets do a meditation exercise
+    - I want to do a meditation exercise 
+
+- intent: meditate_info 
+  examples: | 
+    - what is meditation
+    - how do I meditate 
+    - i dont understand meditation 
+    
+- intent: meditation_link 
+  examples: | 
+    - show me a video on meditation    
+    - please show me a video sbout meditation 
+    - I was to see meditation live 
+    - show me an example of meditation 
+
+- intent: pmr_exercise_info 
+  examples: |
+    - what is a pmr exercise 
+    - I do not know what is a pmr exercise
+    - progressive muscle relaxation    
+
+- intent: pmr_exercise_walkThrough
+  examples: |
+      - walk me though a pmr exercise 
+      - I want to practice pmr 
+      - lets do a pmr exercise
+      - I want to do a pmr exercise  
+      
+- intent: pmr_demo
+  examples: | 
+    - i need an example of pmr 
+    - show me a video of pmr 
+    - i need a live tutorial of pmr      
+
+- intent: deep_breathing_demo
+  examples: |
+    - show me how to do deep breathing 
+    - demo deep breathing 
+    - show me a deep breathing tutorial 
+    - show me a demo on deep breathing 
+
+- intent: breathing_exercise_info 
+  examples: |
+    - what is deep breathing 
+    - I do not know what is deep breathing 
+    - deep breathing     
+    
+- intent: deep_breathing_walkThrough
+  examples: |
+    - walk me though a deep breathing exercise 
+    - I want to practice deep breathing  
+    - lets do a deep breathing exercise
+    - I want to do a deep breathing exercise      
+
 - intent: needs_help 
   examples: | 
     - I need help
@@ -45,6 +170,19 @@ nlu:
     - see you around
     - bye bye
     - see you later
+
+- intent: done 
+  examples: |
+    - I am done 
+    - I am finished
+    - I am done writing  
+
+- intent: gratiude
+  examples: | 
+    - thanks
+    - thank you
+    - thank you so much 
+    - that helped!    
 
 - intent: affirm
   examples: |
@@ -98,6 +236,40 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+
+- intent: bot_function 
+  examples: |
+    - What can you do 
+    - what do you do 
+    - what is your function 
+    - how can you be of assistance 
+    - why should i use you 
+    - why should I talk to you 
+
+- intent: mental_health_improvement 
+  examples: | 
+    - how can you help me
+    - what are some exercises to improve mental health 
+    - how can you improve my mental health 
+  
+- intent: love 
+  examples: | 
+   - love you 
+   - I love you 
+   - you mean so much to me 
+  
+- intent: wyd 
+  examples: | 
+   - what are your doing 
+   - what are you doing right now 
+   - wyd 
+  
+- intent: who_are_you 
+  examples: |
+    - who are you 
+    - what is your name  
+    - are you motiv-pup
+    - are you a dog  
 
 - intent: bot_challenge
   examples: |

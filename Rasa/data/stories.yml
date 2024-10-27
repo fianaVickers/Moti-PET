@@ -2,6 +2,165 @@ version: "3.1"
 
 stories:
 
+- story: provide motivation 
+  steps: 
+  - intent: need_motivation
+  - action: utter_motivation   
+
+- story: provide positivity
+  steps: 
+  - intent: need_positivity
+  - action: utter_positive_affirm
+
+- story: provide fun facts
+  steps: 
+  - intent: fun_fact
+  - action: utter_fun_fact
+    
+- story: provide calming music  
+  steps: 
+    - intent: play_music
+    - action: utter_play_music_stepTwo
+    - action: utter_play_music_link   
+
+- story: body scan exercise 
+  steps: 
+  - intent: bodyscan_exercise
+  - action: utter_bodyscan_stepOne
+  - action: utter_next_step_exercise
+  - intent: affirm 
+  - action: utter_bodyscan_stepTwo
+  - action: utter_bodyscan_stepThree
+  - action: utter_bodyscan_stepFour
+  - action: utter_bodyscan_stepFive
+  - action: utter_do_u_need_a_video_excersie
+  - intent: affirm
+  - action: utter_bodyscan_help_link
+  - action: utter_exercise_finished
+  
+- story: body scan information 
+  steps:
+  - intent: bodyscan_info
+  - action: utter_bodyscan_tips
+
+- story: body scan demo
+  steps: 
+  - intent: bodyscan_demo
+  - action: utter_exercise_demo
+  - action: utter_bodyscan_help_link
+
+- story: respond to thank you  
+  steps: 
+  - intent: gratiude
+  - action: utter_grattitude_response
+
+- story: pmr exercise
+  steps: 
+  - intent: pmr_exercise_walkThrough
+  - action: utter_PMR_stepOne
+  - action: utter_next_step_exercise
+  - intent: affirm 
+  - action: utter_PMR_stepTwo
+  - action: utter_PMR_stepThree
+  - action: utter_PMR_stepFour
+  - action: utter_next_step_exercise
+  - intent: affirm 
+  - action: utter_PMR_stepFive
+  - action: utter_PMR_stepSix
+  - action: utter_PMR_stepSeven
+  - action: utter_PMR_stepEight
+  - action: utter_next_step_exercise
+  - intent: affirm 
+  - action: utter_PMR_stepNine
+  - action: utter_PMR_stepTen
+  - action: utter_PMR_stepEleven
+  - action: utter_do_u_need_a_video_excersie
+  - intent: affirm
+  - action: utter_PMR_link
+  - action: utter_exercise_finished
+
+- story: pmr information 
+  steps:
+  - intent: pmr_exercise_info
+  - action: utter_PMR_information
+
+- story: pmr demo 
+  steps: 
+  - intent: pmr_demo
+  - action: utter_exercise_demo
+  - action: utter_PMR_link
+
+- story: deep breathing exercise
+  steps: 
+  - intent: deep_breathing_walkThrough
+  - action: utter_breathing_stepOne
+  - action: utter_next_step_exercise
+  - intent: affirm 
+  - action: utter_breathing_stepTwo
+  - action: utter_breathing_stepThree
+  - action: utter_breathing_stepFour
+  - action: utter_breathing_stepFive
+  - action: utter_next_step_exercise
+  - intent: affirm
+  - action: utter_breathing_stepSix
+  - action: utter_do_u_need_a_video_excersie
+  - intent: affirm
+  - action: utter_breathing_link
+  - action: utter_exercise_finished
+
+- story: deep breathing information 
+  steps:
+  - intent: breathing_exercise_info
+  - action: utter_breathing_info
+
+- story: deep breathing demo 
+  steps: 
+  - intent: deep_breathing_demo
+  - action: utter_exercise_demo  
+  - action: utter_breathing_link
+
+- story: meditation exercise
+  steps: 
+  - intent: meditation
+  - action: utter_meditation_stepOne
+  - action: utter_next_step_exercise
+  - intent: affirm 
+  - action: utter_meditation_stepTwo
+  - action: utter_meditation_stepThree
+  - action: utter_next_step_exercise
+  - intent: affirm
+  - action: utter_meditation_stepFour
+  - action: utter_meditation_stepFive
+  - action: utter_next_step_exercise
+  - intent: affirm
+  - action: utter_meditation_stepSix
+  - action: utter_meditation_stepSeven
+  - action: utter_do_u_need_a_video_excersie
+  - intent: affirm
+  - action: utter_meditation_link
+  - action: utter_exercise_finished   
+
+- story: meditation information 
+  steps:
+  - intent: meditate_info
+  - action: utter_meditation_info
+
+- story: meditation demo
+  steps: 
+  - intent: meditation_link
+  - action: utter_exercise_demo
+  - action: utter_meditation_link  
+  
+- story: journaling exercise 
+  steps: 
+  - intent: journal
+  - action: utter_journaling_stepOne
+  - action: utter_journaling_stepTwo
+  - action: utter_journaling_stepThree
+  - intent: done 
+  - action: utter_journaling_stepFour
+  - action: utter_journaling_stepFive
+
 - story: provide help  
   steps:
   - intent: needs_help
