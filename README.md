@@ -47,11 +47,23 @@ Moti-PuP uses an emotion detection A.I model to retain emotions from a users cam
 ```
  pip3 install rasa
 ``` 
-#### Communicate with model 
+#### Communicate with model for model testing
 
 ```
  rasa shell
 ```
 Type whatever phrase you wish into the command line after it runs.  
-rasa run actions 
-rasa run -m models --enable-api --cors “*” --debug
+
+#### Communicate with model for UI testing
+Ask me for the actions.oy file since it holds a special API key
+```
+ rasa train 
+```
+run this command in seperate terminal - this allows motiv-pup to communication with emotion detection model 
+```
+ rasa run actions 
+```
+run this command in seperate terminal allows rasa api to be exposed to frontend
+```
+ rasa run -m models --enable-api --cors “*” --debug
+```
