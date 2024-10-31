@@ -32,6 +32,7 @@ rules:
   steps:
   - intent: bot_function
   - action: utter_bot_function
+  - action: utter_all_func
   - action: utter_example_questions
 
 - rule: response to wyd

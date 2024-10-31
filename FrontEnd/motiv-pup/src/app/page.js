@@ -5,7 +5,7 @@ import ChatbotStyles from './styles';
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
-    { text: 'Hi, its me motiv-pUp. Woof! Hello! How can I help you today?', sender: 'bot' }
+    { text: 'Hi, its me motiv-pUp. Woof! Hello! I am trained to help you manage your mental health. Try asking me, what I can do, or even say Hi :)', sender: 'bot' }
   ]);
   const [userMessage, setUserMessage] = useState('');
   const chatWindowRef = useRef(null);

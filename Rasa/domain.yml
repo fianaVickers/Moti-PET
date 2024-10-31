@@ -66,6 +66,9 @@ responses:
   - text: "you really mean it? *puppy eyes*"
   - text: "I love you the most! Woof!"
 
+  utter_all_func: 
+  - text: "I have been trained on body scan, meditation, journaling, and progressive muscle relaxation, and deep breathing techniques. I am equiped to walk you through them, find you demo vidoes, or even give you general information. I can also find you calming music, motivate you and radiate positivity with phrases. Also if you want me to recommend an exercise based on your emotions, just type <I want to talk> and i will analyze your emotions and help you the best way I know how! Woof!"
+
   utter_mental_health_improv: 
   - text: "I'm motiv-PuP I am here to help your mental health improve via my journaling function, progressive muscle relaxation, body scan, deep breathing, and meditation exercises. I also have been trained how to motivate and tell you positive affirmations, and play calming music Woof!"
   - text: "I am trained with pmr, body scan, meditation, and deep breathing exercises. Just ask me about them!"
