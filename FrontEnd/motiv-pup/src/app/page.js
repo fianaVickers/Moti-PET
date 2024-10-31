@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import ChatbotStyles from './styles'; 
+import ChatbotStyles from './styles';
 
 export default function Chatbot() {
   const [messages, setMessages] = useState([
@@ -55,11 +55,11 @@ export default function Chatbot() {
     } catch (error) {
       console.error('Error detecting emotion:', error);
       return "Emotion detection failed";
-      
+
     }
   };
 
-  const handleSendAWS = async() => {
+  const handleSendAWS = async () => {
     if (!userMessage.trim()) return;
     // user messages should be displayed immediately
     setMessages((prevMessages) => [
@@ -73,8 +73,8 @@ export default function Chatbot() {
       message: userMessage,
       emotion: emotion,
     };
-    try{
-      const response = await fetch('https://localhost:8080/api/recieve',{
+    try {
+      const response = await fetch('https://localhost:8080/api/recieve', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,33 +82,33 @@ export default function Chatbot() {
         body: JSON.stringify(payload),
       });
 
-    
-    const backendResponse = await response.json();
-    // Make sure to return the correct JSON body from backend
-    console.log(backendResponse);
-    const backendMessage = backendResponse.message || "No response from beckend";
 
-    // Displaying backend's responde in the chat
-    setMessages((prevMessages)=>[
-      ...prevMessages,
-      { test: backendMessage, sender: 'bot'},
-    ]);
+      const backendResponse = await response.json();
+      // Make sure to return the correct JSON body from backend
+      console.log(backendResponse);
+      const backendMessage = backendResponse.message || "No response from beckend";
+
+      // Displaying backend's responde in the chat
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { text: backendMessage, sender: 'bot' },
+      ]);
 
     }
-    catch(error){
-      console.error('Error sending data to backend: ',error);
-      setMessages((prevMessages)=>[
+    catch (error) {
+      console.error('Error sending data to backend: ', error);
+      setMessages((prevMessages) => [
         ...prevMessages,
         {
-           text: 'Error communicating with backend. Please try again',
-           sender: 'bot'
+          text: 'Error communicating with AWS. Please try again',
+          sender: 'bot'
         },
       ]);
     }
     setUserMessage('');
   };
 
-  const handleSendRasa = async() => {
+  const handleSendRasa = async () => {
     if (!userMessage.trim()) return;
     // user messages should be displayed immediately
     setMessages((prevMessages) => [
@@ -116,41 +116,44 @@ export default function Chatbot() {
       { text: userMessage, sender: 'user' }
     ]);
 
-    try{
+    try {
       const response = await fetch("http://localhost:5005/webhooks/rest/webhook", {
         method: "POST",
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
-          'charset':'UTF-8',
+          'charset': 'UTF-8',
         },
         credentials: "same-origin",
         body: JSON.stringify({ sender: "user", message: userMessage }),
       });
+      const data = await response.json();
 
-    const backendResponse = await response.json();
-    const temp = backendResponse[0];      
-    const recipient_msg = temp["text"]; 
-    console.log("rasa says: " + recipient_msg); 
+      if (data && data.length > 0) {
+        data.forEach(message => {
+          if (message.text) {
+            // Assuming setMessages is a function that updates messages on the frontend
+            setMessages(prevMessages => [...prevMessages, {
+              text: message.text,
+              sender: 'bot'
+            }]);
+          }
+        });
+      }
 
-    // Displaying backend's responde in the chat
-    setMessages((prevMessages)=>[
-      ...prevMessages,
-      { test: "recipient_msg", sender: 'bot'},
-    ]);
 
     }
-    catch(error){
-      console.error('Error sending data to backend: ',error);
-      setMessages((prevMessages)=>[
+    catch (error) {
+      console.error('Error sending data to Rasa chatbot: ', error);
+      setMessages((prevMessages) => [
         ...prevMessages,
         {
-           text: "recipient_msg",
-           sender: 'bot'
+          text: 'recipient_msg',
+          sender: 'bot'
         },
       ]);
     }
-    setUserMessage('huh');
+    setUserMessage('');
   }
 
   useEffect(() => startWebcam(), []);
@@ -160,13 +163,13 @@ export default function Chatbot() {
       <img
         src="/puppy.gif"
         alt="Puppy GIF"
-        style={ChatbotStyles.puppyGif} 
+        style={ChatbotStyles.puppyGif}
       />
       <div style={ChatbotStyles.chatWrapper}>
         <div style={ChatbotStyles.header}>
-          <img 
-            src="/screen.png" 
-            alt="Moti-Pup Logo" 
+          <img
+            src="/screen.png"
+            alt="Moti-Pup Logo"
             style={{ width: '100%', height: '100%', objectFit: 'scale-down' }}
           />
         </div>

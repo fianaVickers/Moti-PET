@@ -1,3 +1,5 @@
 /Rasa/.rasa/cache
-/Rasa/actions/__pycache__/
+/Rasa/actions/__pycache__
+/Rasa/models
+
 .env
