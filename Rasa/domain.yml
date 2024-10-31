@@ -25,6 +25,7 @@ intents:
   - journal
   - meditation
   - meditate_info
+  - emotional_input
   - bodyscan_demo
   - meditation_link
   - pmr_exercise_info
@@ -37,12 +38,23 @@ intents:
 
 slots:
   emotion:
-    type: text
-    mappings: 
+    type: categorical
+    influence_conversation: true
+    values:
+      - joy
+      - sadness
+      - anger
+      - neutral
+      - surprise
+      - disgust
+      - fear
+    mappings:
       - type: custom
 
 responses:
 
+  utter_emotion_test:
+  - text: "this was the emotion found: {emotion}"
   utter_bot_function: 
   - text: "Im here to make your day go smoother, from being someone to listen to providing positive affirmations and mental health exercises to relieve stress ;) Woof!"
 
@@ -106,7 +118,7 @@ responses:
   - text: "You are doing amazing so far! Lets keep going, are you ready to continue?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Great, I am happy to hear that!"
 
   utter_goodbye:
   - text: "Bye"
@@ -115,9 +127,9 @@ responses:
   - text: "I am a bot, powered by Rasa."
 
   utter_want_to_talk:
-  - text: "I am all ears, Woof! Tell me what's going on? and I can try to help you the best way I can"
-  - text: "You have my full attention, whats up? I can try to help you the best way I can"
-  - text: "Lets talk about it, tell me whatever you feel comfortable with. I can try to help you the best way I can"
+  - text: "I am all ears, Woof! Tell me what's going on? and I can try to help you the best way I can. To better understand you, type Listen [your input]"
+  - text: "You have my full attention, whats up? I can try to help you the best way I can. To better understand you, type Listen [your input]"
+  - text: "Lets talk about it, tell me whatever you feel comfortable with. I can try to help you the best way I can. To better understand you, type Listen [your input]"
 
   utter_grattitude_response: 
   - text: "I am so glad I could help! Woof"
@@ -231,7 +243,7 @@ responses:
   - text: "Lets dive in a little deeper and focus your mind. Think about this specific prompt..."
 
   utter_journaling_stepFive: 
-  - text: "Close your journal entry by summarizing any insights or realizations you have had during the session. You can ask yourself: What did I learn about myself today? What do I want to focus on moving forward? Lastly, take a few moments to breathe deeply, allowing yourself to feel calm and centered before returning to your day"
+  - text: "Close your journal entry by summarizing any insights or realizations you have had during the session. You can ask yourself: What did I learn about myself today? What do I want to focus on moving forward? Lastly, take a few moments to breathe deeply, allowing yourself to feel calm and centered before returning to your day. Hopefully this session helped! Woof!"
 
   utter_journaling_neg_optionOne: 
   - text: "Write about: What negative emotion are you experiencing right now? How does it feel in your body, and what triggered it?"
@@ -342,11 +354,38 @@ responses:
   - text: "[Calm music](https://www.youtube.com/watch?v=G-YdqCMz_Ys)"
   - text: "[Calm music](https://www.youtube.com/watch?v=VDuFYROXQfg)"
 
+  utter_emotion_detet_resp: 
+  - text: "One second Woof! Woof! currently looking though my training data to understand your emotion"
+
+  utter_sadness_emotion:
+  - text: "From my training, it sounds like you are feeling sad. But I am equipped to help you get through it, were on this journey together. Lets try this exercise:"
+
+  utter_anger_emotion:
+  - text: "From my training, it sounds like you are feeling angry. But I am equipped to help you get through it, were on this journey together. Lets try this exercise:"
+
+  utter_fear_emotion:
+  - text: "From my training, it sounds like you are feeling fearful or anxious. But I am equipped to help you get through it, were on this journey together. Lets try this exercise:"
+  
+  utter_disgust_emotion:
+  - text: "From my training, it sounds like you are feeling disgusted. But I am equipped to help you get through it, were on this journey together. Lets try this exercise:"
+
+  utter_surprise_emotion:
+  - text: "From my training, it sounds like you are feeling surprised. Hopefully the surprise was a good one! I wish I was surpised with a bone! Bark!"
+
+  utter_joy_emotion:
+  - text: "From my training, it sounds like you are feeling happy! I am so glad your are doing well, when your happy i am happy ;) Woof!"
+
+  utter_nuetral_emotion:
+  - text: "From my training, it sounds like you are feeling bored. Have you ever heard that..."
+
+  utter_ask_journal: 
+  - text: "Woof Woof, from my training and digging through your emotions I think we should write about what you feel, is that okay?"
   utter_default:
   - text: "I'm sorry, I haven't been trained to respond to that yet. ;( Can you please rephrase?"
 
 actions:
   - action_detect_emotion
+  - action_prompt_user_input
 
 
 session_config:

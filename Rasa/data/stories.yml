@@ -26,6 +26,7 @@ stories:
 - story: body scan exercise 
   steps: 
   - intent: bodyscan_exercise
+  - checkpoint: bodyscan_start
   - action: utter_bodyscan_stepOne
   - action: utter_next_step_exercise
   - intent: affirm 
@@ -57,6 +58,7 @@ stories:
 - story: pmr exercise
   steps: 
   - intent: pmr_exercise_walkThrough
+  - checkpoint: pmr_start
   - action: utter_PMR_stepOne
   - action: utter_next_step_exercise
   - intent: affirm 
@@ -93,6 +95,7 @@ stories:
 - story: deep breathing exercise
   steps: 
   - intent: deep_breathing_walkThrough
+  - checkpoint: deep_breathing_start
   - action: utter_breathing_stepOne
   - action: utter_next_step_exercise
   - intent: affirm 
@@ -122,6 +125,7 @@ stories:
 - story: meditation exercise
   steps: 
   - intent: meditation
+  - checkpoint: meditation_start
   - action: utter_meditation_stepOne
   - action: utter_next_step_exercise
   - intent: affirm 
@@ -150,16 +154,6 @@ stories:
   - intent: meditation_link
   - action: utter_exercise_demo
   - action: utter_meditation_link  
-  
-- story: journaling exercise 
-  steps: 
-  - intent: journal
-  - action: utter_journaling_stepOne
-  - action: utter_journaling_stepTwo
-  - action: utter_journaling_stepThree
-  - intent: done 
-  - action: utter_journaling_stepFour
-  - action: utter_journaling_stepFive
 
 - story: happy path
   steps:
@@ -188,13 +182,127 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: Detect and respond to user emotion
+- story: Detect and respond to sad user emotion
   steps:
   - intent: detect_emotion
   - action: utter_want_to_talk
+  - intent: emotional_input
   - action: action_detect_emotion
   - slot_was_set:
-     - emotion: "happy"
-  - action: utter_happy_detected
+    - emotion: sadness
+  - action: utter_sadness_emotion
+  - checkpoint: bodyscan_start
+   
 
+- story: Detect and respond to happy user emotion
+  steps:
+  - intent: detect_emotion
+  - action: utter_want_to_talk
+  - intent: emotional_input
+  - action: action_detect_emotion
+  - slot_was_set:
+    - emotion: joy
+  - action: utter_joy_emotion
+  - action: utter_emotion_test  
+  - action: utter_ask_journal
+  - intent: affirm 
+  - checkpoint: journal_start
+  - action: utter_journaling_stepOne
+  - action: utter_journaling_stepTwo
+  - action: utter_journaling_stepThree
+  - intent: done 
+  - action: utter_journaling_stepFour
+  - action: utter_journaling_pos_optionFive
+  - action: utter_journaling_stepFive
 
+- story: Detect and respond to angry user emotion
+  steps:
+  - intent: detect_emotion
+  - action: utter_want_to_talk
+  - intent: emotional_input
+  - action: action_detect_emotion
+  - slot_was_set:
+    - emotion: anger
+  - action: utter_anger_emotion
+  - action: utter_emotion_test   
+  - checkpoint: pmr_start
+
+- story: Detect and respond to anxious user emotion
+  steps:
+  - intent: detect_emotion
+  - action: utter_want_to_talk
+  - intent: emotional_input
+  - action: action_detect_emotion
+  - slot_was_set:
+    - emotion: fear
+  - action: utter_fear_emotion 
+  - action: utter_emotion_test   
+  - checkpoint: deep_breathing_start
+   
+- story: Detect and respond to disgusted user emotion
+  steps:
+  - intent: detect_emotion
+  - action: utter_want_to_talk
+  - intent: emotional_input
+  - action: action_detect_emotion
+  - slot_was_set:
+    - emotion: disgust
+  - action: utter_disgust_emotion   
+  - action: utter_emotion_test    
+  - checkpoint: deep_breathing_start
+     
+- story: Detect and respond to surprised user emotion
+  steps:
+  - intent: detect_emotion
+  - action: utter_want_to_talk
+  - intent: emotional_input
+  - action: action_detect_emotion
+  - slot_was_set:
+    - emotion: surprise
+  - action: utter_surprise_emotion    
+  - action: utter_emotion_test  
+  - action: utter_ask_journal
+  - intent: affirm 
+  - checkpoint: journal_start
+  - action: utter_journaling_stepOne
+  - action: utter_journaling_stepTwo
+  - action: utter_journaling_stepThree
+  - intent: done 
+  - action: utter_journaling_stepFour
+  - action: utter_journaling_pos_optionFour
+  - action: utter_journaling_stepFive     
+
+- story: Detect and respond to nuetral user emotion
+  steps:
+  - intent: detect_emotion
+  - action: utter_want_to_talk
+  - intent: emotional_input
+  - action: action_detect_emotion
+  - slot_was_set:
+    - emotion: neutral
+  - action: utter_nuetral_emotion   
+  - action: utter_fun_fact
+  - action: utter_ask_journal
+  - intent: affirm 
+  - checkpoint: journal_start
+  - action: utter_journaling_stepOne
+  - action: utter_journaling_stepTwo
+  - action: utter_journaling_stepThree
+  - intent: done 
+  - action: utter_journaling_stepFour
+  - action: utter_journaling_pos_optionFour
+  - action: utter_journaling_stepFive
+ 
+- story: journaling exercise 
+  steps: 
+  - intent: journal
+  - action: utter_ask_journal
+  - intent: affirm 
+  - checkpoint: journal_start
+  - action: utter_journaling_stepOne
+  - action: utter_journaling_stepTwo
+  - action: utter_journaling_stepThree
+  - intent: done 
+  - action: utter_journaling_stepFour
+  - action: utter_journaling_neg_optionFive
+  - action: utter_journaling_stepFive

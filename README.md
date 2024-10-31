@@ -53,3 +53,5 @@ Moti-PuP uses an emotion detection A.I model to retain emotions from a users cam
  rasa shell
 ```
 Type whatever phrase you wish into the command line after it runs.  
+rasa run actions 
+rasa run -m models --enable-api --cors “*” --debug

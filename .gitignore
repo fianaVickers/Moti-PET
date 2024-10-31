@@ -1,0 +1,3 @@
+/Rasa/.rasa/cache
+/Rasa/actions/__pycache__/
+.env

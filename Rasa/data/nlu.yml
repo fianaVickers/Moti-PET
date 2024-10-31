@@ -6,20 +6,17 @@ nlu:
   examples: |
     - I need to get some things off my chest 
     - I need to talk to someone 
-    - something does not feel right 
-    - i am not feeling good 
     - i need to talk 
-    - no one understands me 
-    - I am having a tough day 
-    - tough time
-    - i am frusterated 
-    - i am sad
-    - I am down 
-    - I need help
-    - I really need help 
     - can you help me 
     - please, I need someone
     - help me 
+
+- intent: emotional_input
+  examples: |
+      - I want to say
+      - i wish to say    
+      - listen 
+      - Listen 
 
 - intent: play_music 
   examples: | 
@@ -49,10 +46,8 @@ nlu:
     
 - intent: need_motivation 
   examples: | 
-    - I really need motivation right now 
     - motivate me
-    - motivate me please 
-    - tell me something to lift my spririts 
+    - motivate me please
     - I need motivation  
 
 - intent: bodyscan_info
