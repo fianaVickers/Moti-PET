@@ -40,7 +40,7 @@ export default function Chatbot() {
 
     try {
       // Send the image data to the API route for emotion detection
-      const response = await fetch('/api/detectEmotion', {
+      const response = await fetch('http://localhost:3000/api/detectEmotion', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ export default function Chatbot() {
       emotion: emotion,
     };
     try {
-      const response = await fetch('https://localhost:8080/api/recieve', {
+      const response = await fetch('http://localhost:3000/api/detectEmotion', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -86,12 +86,13 @@ export default function Chatbot() {
       const backendResponse = await response.json();
       // Make sure to return the correct JSON body from backend
       console.log(backendResponse);
-      const backendMessage = backendResponse.message || "No response from beckend";
+      const emotionInResponse = backendResponse.emotion || emotion;
+      const backendMessage = backendResponse.message || "No response from backend";
 
       // Displaying backend's responde in the chat
       setMessages((prevMessages) => [
         ...prevMessages,
-        { text: backendMessage, sender: 'bot' },
+        { text: emotionInResponse, sender: 'bot' },
       ]);
 
     }

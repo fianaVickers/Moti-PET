@@ -1,5 +1,3 @@
-// src/app/api/detectEmotion/route.js
-
 import AWS from 'aws-sdk';
 
 const rekognition = new AWS.Rekognition({
@@ -10,9 +8,13 @@ const rekognition = new AWS.Rekognition({
 
 export async function POST(req) {
   try {
-    const { image } = await req.json();  // Read image from request body
+    const body = await req.json();
+    console.log('Incoming request body:', body); 
+    const { image } = body; 
+    if (!image) {
+      return new Response(JSON.stringify({ error: 'Image data is required' }), { status: 400 });
+    }
 
-    // Convert base64 image data to binary
     const base64Data = image.replace(/^data:image\/jpeg;base64,/, '');
     const binaryData = Buffer.from(base64Data, 'base64');
 
@@ -23,7 +25,6 @@ export async function POST(req) {
       Attributes: ['ALL'],
     };
 
-    // Send the image to AWS Rekognition for analysis
     const rekognitionResponse = await rekognition.detectFaces(params).promise();
     const faceDetails = rekognitionResponse.FaceDetails;
 
@@ -38,6 +39,6 @@ export async function POST(req) {
     }
   } catch (error) {
     console.error('Error with Rekognition:', error);
-    return new Response(JSON.stringify({ error: 'Error with Rekognition' }), { status: 500 });
+    return new Response(JSON.stringify({ error: 'Error with Rekognition: ' + error.message }), { status: 500 });
   }
 }
